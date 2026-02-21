@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "\"Noto Sans JP\"", "\"游ゴシック\"", "\"Yu Gothic\"", sans-serif;
+  }
+}
+
+@layer components {
+  .map {
+    height: 80svh;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 6px #000;
+  }
+}
