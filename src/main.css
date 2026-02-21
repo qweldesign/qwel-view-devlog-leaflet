@@ -86,11 +86,11 @@
       @apply bg-white;
     }
 
-    tr:has(.is-done) {
+    tr:has(.is-done), tr:has(.is-primary) {
       @apply bg-green-50;
     }
 
-    tr:has(.is-doing) {
+    tr:has(.is-doing), tr:has(.is-secondary) {
       @apply bg-sky-50;
     }
 
@@ -122,12 +122,24 @@
       @apply font-bold;
     }
 
-    td.is-done {
+    td.is-done, td.is-available, td.is-primary {
       @apply text-green-400 font-bold;
     }
 
-    td.is-doing {
+    td.is-doing, td.is-survey, td.is-secondary {
       @apply text-sky-400 font-bold;
+    }
+
+    td.is-A {
+      @apply text-yellow-400 font-bold;
+    }
+
+    td.is-B {
+      @apply text-gray-400 font-bold;
+    }
+
+    td.is-C {
+      @apply text-orange-400 font-bold;
     }
   }
 }

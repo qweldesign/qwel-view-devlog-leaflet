@@ -21,5 +21,8 @@ onMounted(async () => {
       <h2 class="heading my-6">現在調査中の空き家マップ</h2>
     </div>
     <div class="map" ref="mapRef"></div>
+    <div class="my-6 text-center">
+      <RouterLink class="button-orange mx-6" to="/properties/">物件一覧を見る</RouterLink>
+    </div>
   </section>
 </template>
