@@ -41,8 +41,8 @@ function closeCover() {
         </div>
       </Transition>
     </div>
-    <div class="my-6 text-center">
-      <RouterLink class="button-orange mx-6" to="/properties/">物件一覧を見る</RouterLink>
+    <div class="text-center">
+      <RouterLink class="button-orange m-6" to="/properties/">物件一覧を見る</RouterLink>
     </div>
   </section>
 </template>

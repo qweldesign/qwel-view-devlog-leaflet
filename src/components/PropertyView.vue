@@ -35,9 +35,9 @@ function parseData(data?: Property) {
         </table>
       </div>
     </div>
-    <div class="my-6 text-center">
-      <RouterLink class="button-orange mx-6" to="/">ダッシュボードへ戻る</RouterLink>
-      <RouterLink class="button-orange mx-6" to="/properties/">物件一覧へ戻る</RouterLink>
+    <div class="text-center">
+      <RouterLink class="button-orange m-6" to="/">ダッシュボードへ戻る</RouterLink>
+      <RouterLink class="button-orange m-6" to="/properties/">物件一覧へ戻る</RouterLink>
     </div>
   </section>
 </template>
