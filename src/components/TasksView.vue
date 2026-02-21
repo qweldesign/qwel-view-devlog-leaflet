@@ -88,9 +88,9 @@ function toggle(id: number) {
           </tbody>
         </table>
       </div>
-      <div class="my-6 text-center">
-        <RouterLink v-if="props.mode === 'summary'" class="button-sky mx-6" to="/tasks/">43のスキルカードを確認する</RouterLink>
-        <RouterLink v-if="props.mode === 'details'" class="button-sky mx-6" to="/">ダッシュボードへ戻る</RouterLink>
+      <div class="text-center">
+        <RouterLink v-if="props.mode === 'summary'" class="button-sky m-6" to="/tasks/">43のスキルカードを確認する</RouterLink>
+        <RouterLink v-if="props.mode === 'details'" class="button-sky m-6" to="/">ダッシュボードへ戻る</RouterLink>
       </div>
     </div>
   </section>
