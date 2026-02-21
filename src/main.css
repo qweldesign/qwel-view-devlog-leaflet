@@ -7,8 +7,80 @@
 }
 
 @layer components {
+  .section {
+    @apply scroll-mt-32 lg:scroll-mt-24;
+  }
+
+  .inner {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  .heading {
+    @apply ps-3 border-s-6 border-s-gray-200 font-bold text-2xl;
+  }
+
   .map {
     height: 80svh;
+  }
+
+  .table {
+    @apply w-1/1 min-w-3xl;
+
+    thead > tr {
+      @apply bg-white;
+    }
+
+    tbody > tr {
+      @apply transition-colors;
+    }
+
+    tbody > tr:hover {
+      @apply bg-white;
+    }
+
+    tr:has(.is-done) {
+      @apply bg-green-50;
+    }
+
+    tr:has(.is-doing) {
+      @apply bg-sky-50;
+    }
+
+    tr:has(.is-hold) {
+      @apply bg-gray-50;
+    }
+
+    th {
+      @apply border-y border-y-gray-200 p-3 text-left;
+    }
+
+    td {
+      @apply border-b border-b-gray-200 p-3;
+    }
+
+    td.is-critical {
+      @apply text-red-400 font-bold;
+    }
+
+    td.is-heigh {
+      @apply text-orange-400 font-bold;
+    }
+
+    td.is-meddle {
+      @apply text-yellow-400;
+    }
+
+    td.is-large, td.is-medium {
+      @apply font-bold;
+    }
+
+    td.is-done {
+      @apply text-green-400 font-bold;
+    }
+
+    td.is-doing {
+      @apply text-sky-400 font-bold;
+    }
   }
 }
 
