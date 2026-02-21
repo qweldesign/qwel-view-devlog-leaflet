@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useData } from '../composables/useData';
 
 const { data, loadData } = useData();
@@ -10,6 +10,16 @@ const tasks = computed(() => {
 onMounted(async () => {
   await loadData();
 });
+
+const openIds = ref(new Set<number>());
+
+function toggle(id: number) {
+  if (openIds.value.has(id)) {
+    openIds.value.delete(id);
+  } else {
+    openIds.value.add(id);
+  }
+}
 </script>
 
 <template>
@@ -27,6 +37,7 @@ onMounted(async () => {
               <th class="hidden lg:table-cell">労力度</th>
               <th>進捗</th>
               <th>期限</th>
+              <th>備考</th>
             </tr>
           </thead>
           <tbody>
@@ -50,6 +61,14 @@ onMounted(async () => {
                   v-text="t['進捗']"
                 ></td>
                 <td v-text="t['期限']"></td>
+                <td
+                  :class="(t['備考'] ? 'cursor-pointer' : '')"
+                  v-text="(t['備考'] ? openIds.has(t['ID']) ? '▼' : '▶' : '-')"
+                  @click="t['備考'] && toggle(t['ID'])"></td>
+              </tr>
+              <tr v-show="openIds.has(t['ID'])">
+                <td class="text-sm/7 text-center align-top" colspan="2">備考:</td>
+                <td colspan="6" class="text-sm/7" v-html="t['備考'].replaceAll('\n', '<br>')"></td>
               </tr>
             </template>
           </tbody>
