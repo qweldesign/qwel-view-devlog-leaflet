@@ -13,6 +13,12 @@ onMounted(async () => {
     addMarkers(data.value.properties)
   }
 });
+
+const showCover = ref(true);
+
+function closeCover() {
+  showCover.value = false;
+};
 </script>
 
 <template>
@@ -20,7 +26,21 @@ onMounted(async () => {
     <div class="inner">
       <h2 class="heading my-6">現在調査中の空き家マップ</h2>
     </div>
-    <div class="map" ref="mapRef"></div>
+    <div class="map relative my-6">
+      <div class="h-1/1" ref="mapRef"></div>
+      <Transition
+        enter-active-class="transition-opacity duration-300"
+        leave-active-class="transition-opacity duration-300"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <div class="absolute inset-0 z-1000 flex justify-center items-center bg-black/25 cursor-pointer" v-if="showCover" @click="closeCover">
+          <p class="text-white">クリックするとマップを操作できるようになります。</p>
+        </div>
+      </Transition>
+    </div>
     <div class="my-6 text-center">
       <RouterLink class="button-orange mx-6" to="/properties/">物件一覧を見る</RouterLink>
     </div>
