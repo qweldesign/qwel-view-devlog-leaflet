@@ -3,9 +3,15 @@ import { ref, computed, onMounted } from 'vue';
 import { useData } from '../composables/useData';
 import { useMarkdown } from '../composables/useMarkdown';
 
+const props = defineProps<{
+  mode: 'summary' | 'details'
+}>();
+
 const { data, loadData } = useData();
 const tasks = computed(() => {
-  return data.value?.tasks.filter(t => t['進捗'] === '進行中')
+  return props.mode === 'summary'
+    ? data.value?.tasks.filter(t => t['進捗'] === '進行中')
+    : data.value?.tasks;
 });
 
 const { meta, html, loadMarkDown } = useMarkdown();
@@ -31,10 +37,10 @@ function toggle(id: number) {
     <div class="inner">
       <h2 class="heading my-6">進捗・タスク</h2>
       <div class="my-6">
-        <div class="my-3 italic underline" v-text="`最終更新: ${meta?.date}`"></div>
-        <div class="markdown my-3" v-html="html"></div>
+        <div v-if="props.mode === 'summary'" class="my-3 italic underline" v-text="`最終更新: ${meta?.date}`"></div>
+        <div v-if="props.mode === 'summary'" class="markdown my-3" v-html="html"></div>
       </div>
-      <div class="overflow-x-auto">
+      <div class="my-6 overflow-x-auto">
         <table class="table">
           <thead>
             <tr>
@@ -81,6 +87,10 @@ function toggle(id: number) {
             </template>
           </tbody>
         </table>
+      </div>
+      <div class="my-6 text-center">
+        <RouterLink v-if="props.mode === 'summary'" class="button-sky mx-6" to="/tasks/">43のスキルカードを確認する</RouterLink>
+        <RouterLink v-if="props.mode === 'details'" class="button-sky mx-6" to="/">ダッシュボードへ戻る</RouterLink>
       </div>
     </div>
   </section>

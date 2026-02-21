@@ -19,6 +19,14 @@
     @apply ps-3 border-s-6 border-s-gray-200 font-bold text-2xl;
   }
 
+  .button-sky {
+    @apply inline-block w-2xs py-6 rounded-3xl bg-sky-400 hover:bg-sky-200 text-white hover:text-gray-800 transition duration-300;
+  }
+
+  .button-orange {
+    @apply inline-block w-2xs py-6 rounded-3xl bg-orange-400 hover:bg-orange-200 text-white hover:text-gray-800 transition duration-300;
+  }
+
   .map {
     height: 80svh;
   }
