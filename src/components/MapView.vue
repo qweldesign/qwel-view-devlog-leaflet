@@ -16,7 +16,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section id="map" class="section mt-24">
+  <section id="map" class="section my-24">
     <div class="inner">
       <h2 class="heading my-6">現在調査中の空き家マップ</h2>
     </div>
