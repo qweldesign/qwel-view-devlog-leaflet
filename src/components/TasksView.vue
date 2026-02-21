@@ -1,14 +1,18 @@
 <script lang="ts" setup>
 import { ref, computed, onMounted } from 'vue';
 import { useData } from '../composables/useData';
+import { useMarkdown } from '../composables/useMarkdown';
 
 const { data, loadData } = useData();
 const tasks = computed(() => {
   return data.value?.tasks.filter(t => t['進捗'] === '進行中')
 });
 
+const { meta, html, loadMarkDown } = useMarkdown();
+
 onMounted(async () => {
   await loadData();
+  await loadMarkDown('overview');
 });
 
 const openIds = ref(new Set<number>());
@@ -26,6 +30,10 @@ function toggle(id: number) {
   <section id="tasks" class="section mt-12 mb-24">
     <div class="inner">
       <h2 class="heading my-6">進捗・タスク</h2>
+      <div class="my-6">
+        <div class="my-3 italic underline" v-text="`最終更新: ${meta?.date}`"></div>
+        <div class="markdown my-3" v-html="html"></div>
+      </div>
       <div class="overflow-x-auto">
         <table class="table">
           <thead>

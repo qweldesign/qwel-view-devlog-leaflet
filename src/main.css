@@ -23,6 +23,46 @@
     height: 80svh;
   }
 
+  .markdown {
+    h3 {
+      @apply mt-6 mb-3 font-bold text-2xl;
+    }
+
+    h3::before {
+      content: "■ ";
+      @apply text-sky-400;
+    }
+
+    h4 {
+      @apply my-3 font-bold text-xl;
+    }
+
+    h4::before {
+      content: "◎ ";
+      @apply text-orange-400;
+    }
+
+    ul {
+      @apply list-disc ps-6;
+    }
+
+    p, ul {
+      @apply my-3;
+    }
+
+    p, li {
+      @apply text-base/8;
+    }
+
+    li > ul {
+      list-style-type: circle;
+    }
+
+    strong {
+      @apply border-b border-dashed;
+    }
+  }
+
   .table {
     @apply w-1/1 min-w-3xl;
 
