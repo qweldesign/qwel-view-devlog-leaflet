@@ -1,3 +1,11 @@
+# Private Data
+data.json
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
 # Logs
 logs
 *.log
