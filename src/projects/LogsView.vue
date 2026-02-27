@@ -1,31 +1,31 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
-import type { Markdown } from '../types/markdown.ts';
-import { useMarkdown } from '../composables/useMarkdown';
+import { ref, onMounted } from 'vue'
+import type { Markdown } from '../types/markdown.ts'
+import { useMarkdown } from '../composables/useMarkdown.ts'
 
-const logs = ref<Markdown[]>([]);
+const logs = ref<Markdown[]>([])
 
 onMounted(async (limit = 10) => {
   // index.json を読み込む
-  const res = await fetch('/assets/logs/index.json');
-  let files = await res.json();
+  const res = await fetch('/logs/index.json')
+  let files = await res.json()
 
   // markdown を limit 件数切り分ける
-  files = files.slice(0, limit);
+  files = files.slice(0, limit)
 
   // 各 markdown を読み込んで表示
   for (const file of files) {
-    const { meta, html, loadMarkDown } = useMarkdown();
-    await loadMarkDown(file);
+    const { meta, html, loadMarkDown } = useMarkdown()
+    await loadMarkDown(file)
 
     if (meta.value) {
       logs.value.push({
         meta: meta.value,
         html: html.value
-      });
+      })
     }
   }
-});
+})
 </script>
 
 <template>

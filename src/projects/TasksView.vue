@@ -1,33 +1,33 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted } from 'vue';
-import { useData } from '../composables/useData';
-import { useMarkdown } from '../composables/useMarkdown';
+import { ref, computed, onMounted } from 'vue'
+import { useData } from '../composables/useData'
+import { useMarkdown } from '../composables/useMarkdown'
 
 const props = defineProps<{
   mode: 'summary' | 'details'
-}>();
+}>()
 
-const { data, loadData } = useData();
+const { data, loadData } = useData()
 const tasks = computed(() => {
   return props.mode === 'summary'
     ? data.value?.tasks.filter(t => t['進捗'] === '進行中')
-    : data.value?.tasks;
-});
+    : data.value?.tasks
+})
 
-const { meta, html, loadMarkDown } = useMarkdown();
+const { meta, html, loadMarkDown } = useMarkdown()
 
 onMounted(async () => {
-  await loadData();
-  await loadMarkDown('overview');
-});
+  await loadData()
+  await loadMarkDown('overview')
+})
 
-const openIds = ref(new Set<number>());
+const openIds = ref(new Set<number>())
 
 function toggle(id: number) {
   if (openIds.value.has(id)) {
-    openIds.value.delete(id);
+    openIds.value.delete(id)
   } else {
-    openIds.value.add(id);
+    openIds.value.add(id)
   }
 }
 </script>

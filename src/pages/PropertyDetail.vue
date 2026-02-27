@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import PropertyView from '../components/PropertyView.vue';
-const props = defineProps<{ id: string }>();
+import PropertyView from '../projects/PropertyView.vue'
+const props = defineProps<{ id: string }>()
 </script>
 
 <template>

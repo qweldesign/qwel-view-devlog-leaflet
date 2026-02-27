@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { computed, onMounted } from 'vue';
-import { useData } from '../composables/useData';
+import { computed, onMounted } from 'vue'
+import { useData } from '../composables/useData'
 
-const { data, loadData } = useData();
+const { data, loadData } = useData()
 const properties = computed(() => {
-  return data.value?.properties.filter(p => p['カテゴリ'] !== '施設');
-});
+  return data.value?.properties.filter(p => p['カテゴリ'] !== '施設')
+})
 
 onMounted(async () => {
-  await loadData();
-});
+  await loadData()
+})
 </script>
 
 <template>

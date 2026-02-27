@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import AppHeader from './components/Header.vue';
-import AppFooter from './components/Footer.vue';
-import { watch, nextTick } from 'vue';
-import { useRoute } from 'vue-router';
+import AppHeader from './layout/Header.vue'
+import AppFooter from './layout/Footer.vue'
+import { watch, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
 
-const route = useRoute();
+const route = useRoute()
 
 watch(
   () => route.fullPath,
   async () => {
     if (route.hash) {
-      await nextTick();
+      await nextTick()
       setTimeout(() => {
-        const el = document.querySelector(route.hash);
-        el?.scrollIntoView({ behavior: 'smooth' });
-      }, 500);
+        const el = document.querySelector(route.hash)
+        el?.scrollIntoView({ behavior: 'smooth' })
+      }, 500)
     }
   },
   { immediate: true }
-);
+)
 </script>
 
 <template>

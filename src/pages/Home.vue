@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import TasksView from '../components/TasksView.vue';
-import MapView from '../components/MapView.vue';
-import LogsView from '../components/LogsView.vue';
+import TasksView from '../projects/TasksView.vue'
+import MapView from '../projects/MapView.vue'
+import LogsView from '../projects/LogsView.vue'
 </script>
 
 <template>

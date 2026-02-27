@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Home from './pages/Home.vue';
-import Tasks from './pages/Tasks.vue';
-import PropertiesList from './pages/PropertiesList.vue';
-import PropertyDetail from './pages/PropertyDetail.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from './pages/Home.vue'
+import Tasks from './pages/Tasks.vue'
+import PropertiesList from './pages/PropertiesList.vue'
+import PropertyDetail from './pages/PropertyDetail.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -14,10 +14,10 @@ const router = createRouter({
   ],
   scrollBehavior(to) {
     if (to.hash) {
-      return false;
+      return false
     }
-    return { top: 0 };
+    return { top: 0 }
   }
-});
+})
 
-export default router;
+export default router

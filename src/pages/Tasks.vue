@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TasksView from '../components/TasksView.vue';
+import TasksView from '../projects/TasksView.vue'
 </script>
 
 <template>

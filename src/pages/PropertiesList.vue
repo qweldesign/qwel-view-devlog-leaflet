@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PropertiesView from '../components/PropertiesView.vue';
+import PropertiesView from '../projects/PropertiesView.vue'
 </script>
 
 <template>

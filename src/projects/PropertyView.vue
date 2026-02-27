@@ -1,22 +1,22 @@
 <script lang="ts" setup>
-import { computed, onMounted } from 'vue';
-import type { Property } from '../types/data';
-import { useData } from '../composables/useData';
+import { computed, onMounted } from 'vue'
+import type { Property } from '../types/data'
+import { useData } from '../composables/useData'
 
-const props = defineProps<{ id: string }>();
-const { data, loadData } = useData();
+const props = defineProps<{ id: string }>()
+const { data, loadData } = useData()
 const property = computed(() => {
-  return parseData(data.value?.properties.find(p => p['ID'] === props.id));
-});
+  return parseData(data.value?.properties.find(p => p['ID'] === props.id))
+})
 
 onMounted(async () => {
-  await loadData();
-});
+  await loadData()
+})
 
 function parseData(data?: Property) {
-  if (!data) return [];
-  const {ID, 緯度, 経度, カテゴリ, ステータス, 空き家になった年, ...formatted} = data;
-  return Object.entries(formatted);
+  if (!data) return []
+  const {ID, 緯度, 経度, カテゴリ, ステータス, 空き家になった年, ...formatted} = data
+  return Object.entries(formatted)
 }
 </script>
 
