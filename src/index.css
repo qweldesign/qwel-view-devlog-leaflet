@@ -42,7 +42,7 @@
     }
 
     h4 {
-      @apply my-3 font-bold text-xl;
+      @apply mt-6 mb-3 font-bold text-xl;
     }
 
     h4::before {
@@ -52,6 +52,10 @@
 
     ul {
       @apply list-disc ps-6;
+    }
+
+    ol {
+      @apply list-decimal ps-6
     }
 
     p, ul {
