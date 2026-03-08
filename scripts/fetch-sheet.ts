@@ -10,7 +10,7 @@ import 'dotenv/config';
   const url = process.env.SS_API_URL as string;
   const res = await fetch(url);
   const data = await res.json();
-  const outputPath = path.resolve('public/assets/data.json');
+  const outputPath = path.resolve('public/data.json');
 
   fs.writeFileSync(outputPath, JSON.stringify(data, null, 2));
 
