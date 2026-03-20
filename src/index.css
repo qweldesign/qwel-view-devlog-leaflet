@@ -73,6 +73,18 @@
     strong {
       @apply border-b border-dashed;
     }
+
+    table {
+      @apply w-max text-sm;
+    }
+
+    th {
+      @apply border-y border-y-gray-200 p-3 text-left;
+    }
+
+    td {
+      @apply border-b border-b-gray-200 p-3;
+    }
   }
 
   .table {
