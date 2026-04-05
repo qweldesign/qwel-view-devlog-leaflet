@@ -4,6 +4,12 @@
   body {
     font-family: "\"Noto Sans JP\"", "\"游ゴシック\"", "\"Yu Gothic\"", sans-serif;
   }
+
+  @media print {
+    body {
+      font-size: 9pt;
+    }
+  }
 }
 
 @layer components {

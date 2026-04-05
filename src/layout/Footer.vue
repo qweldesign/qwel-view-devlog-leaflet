@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-sky-400 text-white">
+  <footer class="bg-sky-400 text-white print:hidden">
     <div class="max-w-6xl mx-auto p-6">
       <table>
         <tbody>

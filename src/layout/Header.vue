@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 z-1100 bg-white">
+  <header class="sticky top-0 z-1100 bg-white print:hidden">
     <div class="lg:flex lg:flex-wrap lg:items-center h-32 lg:h-24  max-w-6xl mx-auto px-6">
       <h1 class="w-2xs py-3 text-white text-shadow font-bold text-xl">
         <RouterLink to="/">

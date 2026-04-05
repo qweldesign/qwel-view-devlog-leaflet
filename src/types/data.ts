@@ -27,6 +27,7 @@ export interface Property {
   間取り図: string
   形態: string
   価格帯: string
+  構造: string
   間取り: string
   設備: string
   特徴: string
@@ -37,6 +38,8 @@ export interface Property {
   家主連絡先: string
   仲介者氏名: string
   仲介者連絡先: string
+  所有者からの一言: string
+  相談室からの一言: string
 }
 
 export type TaskPriority = 
